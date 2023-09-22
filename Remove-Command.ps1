@@ -36,12 +36,6 @@ If (Test-Path "C:\Program Files (x86)\SAAZODBKP"){
 #Clean up REG
 Write-Output "Cleaning up Registry keys"
 Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Virtual Machine\Guest" -Name "ITSPlatformID" -Force
-Remove-Item "HKLM:\SOFTWARE\WOW6432Node\SAAZOD" -Force
-Remove-Item "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZappr" -Force
-Remove-Item "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZDPMACTL" -Force
-Remove-Item "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZRemoteSupport" -Force
-Remove-Item "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZScheduler" -Force
-Remove-Item "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZServerPlus" -Force
-Remove-Item "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZWatchDog" -Force
+Get-ChildItem "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZ*" | Remove-Item -Force
 
 Write-Output "Removal completed. Please Reinstall."
