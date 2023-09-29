@@ -38,4 +38,4 @@ Write-Output "Cleaning up Registry keys"
 Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Virtual Machine\Guest" -Name "ITSPlatformID" -Force
 Get-ChildItem "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZ*" | Remove-Item -Force
 
-Write-Output "Removal completed. Please Reinstall."
+Write-Output "Removal completed. Please reboot and then reinstall."
