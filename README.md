@@ -1,7 +1,7 @@
 
 # CommandRemoval
 
-This Project was crated so we had an easy way to remove all rememntas of the ConnectWise Command Agent and ScreenConnect Agents.
+This Project was crated so we had an easy way to remove all remints of the ConnectWise Command Agent and ScreenConnect Agents.
 
 
 
