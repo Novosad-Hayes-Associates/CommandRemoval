@@ -37,5 +37,19 @@ If (Test-Path "C:\Program Files (x86)\SAAZODBKP"){
 Write-Output "Cleaning up Registry keys"
 Remove-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\Virtual Machine\Guest" -Name "ITSPlatformID" -Force
 Get-ChildItem "HKLM:\SYSTEM\CurrentControlSet\Services\SAAZ*" | Remove-Item -Force
+Get-ChildItem "HKLM:\SOFTWARE\WOW6432Node\SAAZ*" | Remove-Item -Force
+
+#Clean up Screenconnect 
+Write-Output "Removing ScreenConnect Related Folders."
+Get-ChildItem "C:\Program Files (x86)\ScreenConnect Client *" | Remove-Item -Force
+
+Write-Output "Cleanring up ScreenConnect Related Registry Keys"
+Get-ChildItem "HKLM:\SYSTEM\CurrentControlSet\Services\ScreenConnect Client *" | Remove-Item -Force
+
 
 Write-Output "Removal completed. Please reboot and then reinstall."
+
+#done
+
+Write-host "Press any key to close..."
+[void][System.Console]::ReadKey($true)
